@@ -26,10 +26,22 @@ class Erratik : Random() {
 //    }
 
 
+    /**
+     * Randomly choose one item from the given items.
+     *
+     * Example: chooseOne(1, 2, 3, 4, 5, 6) ---> 4
+     *
+     * @return The randomly selected Item
+     */
     fun <T> chooseOne(vararg items: T): T {
         return chooseOne(items.asIterable())
     }
 
+    /**
+     * Randomly choose one item from the given Iterable
+     * @param items The target Iterable
+     * @return The randomly selected Item
+     */
     fun <T> chooseOne(items: Iterable<T>): T {
         return items.elementAt(nextInt(items.count()))
     }
